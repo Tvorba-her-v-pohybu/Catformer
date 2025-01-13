@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://l2n645agab3o"]
+[gd_scene load_steps=6 format=4 uid="uid://l2n645agab3o"]
 
 [ext_resource type="Texture2D" uid="uid://bwtvgdxgjtkyy" path="res://Assets/Tilemap/tilemap_packed.png" id="1_2pg7c"]
 [ext_resource type="PackedScene" uid="uid://i05lk608iwe2" path="res://MainChar.tscn" id="2_nwgjv"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_p88k7"]
+tile_data = PackedInt32Array(0, 65536, 0, 1, 131072, 0, 2, 131072, 0, 3, 131072, 0, 4, 131072, 0, 5, 131072, 0, 6, 196608, 0)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnpmu"]
 resource_name = "BasicTiles"
@@ -10,7 +13,7 @@ texture_region_size = Vector2i(18, 18)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.96875, -7.125, 7, -7, 7, 7, -7, 7)
 1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.96875, -7.125, 9, -7, 9, 7, -7, 7)
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -7, 9, -7, 9, 7, -9, 7)
 2:0/0 = 0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -7, 9, -7, 9, 7, -9, 7)
 3:0/0 = 0
@@ -256,11 +259,12 @@ texture_region_size = Vector2i(18, 18)
 tile_size = Vector2i(18, 18)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lnpmu")
+pattern_0 = SubResource("TileMapPattern_p88k7")
 
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAAAAMAAAABAAAAAAABAAMAAAACAAAAAAACAAMAAAACAAAAAAADAAMAAAACAAAAAAAEAAMAAAACAAAAAAAFAAMAAAACAAAAAAAGAAMAAAADAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAMAAAABAAAAAAABAAMAAAACAAAAAAACAAMAAAACAAAAAAADAAMAAAACAAAAAAAEAAMAAAACAAAAAAAFAAMAAAACAAAAAAAGAAMAAAADAAAAAAD5/wMAAAABAAAAAAD6/wMAAAACAAAAAAD7/wMAAAACAAAAAAD8/wMAAAACAAAAAAD9/wMAAAACAAAAAAD+/wMAAAACAAAAAAD//wMAAAADAAAAAADy/wMAAAABAAAAAADz/wMAAAACAAAAAAD0/wMAAAACAAAAAAD1/wMAAAACAAAAAAD2/wMAAAACAAAAAAD3/wMAAAACAAAAAAD4/wMAAAADAAAAAAAHAAMAAAABAAAAAAAIAAMAAAACAAAAAAAJAAMAAAACAAAAAAAKAAMAAAACAAAAAAALAAMAAAACAAAAAAAMAAMAAAACAAAAAAANAAMAAAADAAAAAAAOAAMAAAABAAAAAAAPAAMAAAACAAAAAAAQAAMAAAACAAAAAAARAAMAAAACAAAAAAASAAMAAAACAAAAAAATAAMAAAACAAAAAAAUAAMAAAADAAAAAAA=")
 tile_set = SubResource("TileSet_v2fbg")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_nwgjv")]
